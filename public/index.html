@@ -2,14 +2,14 @@
 <html xmlns="http://www.w2.org/1999/xhtml">
 <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.147.3">
+	<meta name="generator" content="Hugo 0.148.1">
             <meta charset="utf-8" />
-    <title>sante - homepage </title>
+    <title>terminalcv </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta property="og:title" content="sante - homepage" />
+    <meta name="description" content="My terminal cv">
+    <meta property="og:title" content="terminalcv" />
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="http://localhost:1313/" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
@@ -57,14 +57,22 @@ jQuery(document).ready(function($) {
         softskills: "list soft skills",
         languages: "list spoken languages",
         projects: "list projects",
+         
+            certifications: "list certifications",
         
         
         
         
-            source: "shows details about template powering this website",
+        
+            version: "Current version",
         
         
         
+        posts: "List all posts",
+        
+        ls: "List all posts",
+        
+        cat: "Open a post",
         
         all: "Show all details about me",
     };
@@ -101,12 +109,36 @@ jQuery(document).ready(function($) {
                commandsHelp();
 
     var whois = [
+     
+        '[[b;grey;]Name:]\t\t\tMikhail Smirnov\n' + 
+        '[[b;grey;]Profession:]\t\tjunior frontend developer\n' +
+        '[[b;grey;]Location:]\t\tYaroslavl\n' +
+        
+        '[[b;grey;]Email:]\t\t\tmusa62298@gmail.com\n' +
+        
+        
+        '[[b;grey;]Homepage:]\t\thttps:\/\/sante-afk.github.io\/sante-homepage\/\n' +
+        
+        
+        'Hi! I’m a beginner frontend developer \npassionate about creating modern and \nuser-friendly web interfaces.\n' +
+        
+        '\r',
     
     ];
 
     function social() { 
         var hideName = false;
         let sMap = { 
+             
+                
+                "github": "https:\/\/github.com\/sante-afk",
+                
+                "LinkedIn": "https:\/\/www.linkedin.com\/in\/mikhail-smirnov-00bb8b36a\/",
+                
+                "Telegram": "https:\/\/t.me\/Qttrehbfjkkkjkjj",
+                
+                "SoundCloud": "https:\/\/soundcloud.com\/4543689",
+                
             
         };
 
@@ -155,13 +187,46 @@ jQuery(document).ready(function($) {
     }
     var certifications = [
     
+        
+            '---\n' +
+            '[[b;grey;]Certificate for organizing a school for developing soft skills]\n' +
+            '2023\n' +
+            
+            'Yaroslavl State Technical University\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/www.linkedin.com\/in\/mikhail-smirnov-00bb8b36a\/\n' +
+            
+            '\r',
+        
+    
     ];
     
     var work = [
     
+        
+            '---\n' +
+            '[[b;red;]Frontend Web Developer]\n' +
+            'Zentip\n' +
+            'Moscow region, Odintsovo\n' +
+            'June 2025 - Present\n' +
+            '\n' +
+            'Development and support of user interfaces of corporate web applications using SAPUI5, JavaScript, XML for building UI and ABAP for implementing business logic on the server side.' +
+            '\r',
+        
+    
     ];
 
     var education = [
+    
+        
+            '---\n' +
+            '[[b;grey;]Yaroslavl State Technical University]\n' +
+            'Sept 2022 - 2026\n' +
+            
+            "\r",
+        
     
     ];
 
@@ -171,13 +236,69 @@ jQuery(document).ready(function($) {
 
     var skills = [
     
+        
+            '[[b;red;]JavaScript:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' +
+            
+            '\r',
+        
+            '[[b;default;]sapui5:]\n' +
+            progressBar( 50 ) +
+            '50' + '%\n' +
+            
+            '\r',
+        
+            '[[b;default;]XML:]\n' +
+            progressBar( 50 ) +
+            '50' + '%\n' +
+            
+            '\r',
+        
+    
     ];
 
     var softSkills = [
     
+        
+            '[[b;default;]Communication:]\n' +
+            progressBar( 20 ) +
+            '20' + '%\n' + 
+            
+            '\r',
+        
+            '[[b;red;]Teamwork:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' + 
+            
+            '\r',
+        
+    
     ];
   
     var languages = [
+    
+        
+            '[[b;Blue;]English:]\n' +
+            progressBar( 50 )+ 
+            '50' + '%\n' +
+            
+            '\r',
+        
+            '[[b;Blue;]Russian:]\n' +
+            progressBar( 50 )+ 
+            '50' + '%\n' +
+            
+            '\r',
+        
+            '[[b;grey;]Gibberish:]\n' +
+            progressBar( 100 )+ 
+            '100' + '%\n' +
+            
+            'pasghettipigglywiggly\n' +
+            
+            '\r',
+        
     
     ];
 
@@ -210,6 +331,8 @@ jQuery(document).ready(function($) {
         certifications,
         misc,
         
+        
+        source,
         
     ]
 
@@ -286,6 +409,8 @@ jQuery(document).ready(function($) {
                 break;
             case 'skills':
                 
+                useLess = true;
+                
                 echoArray(skills);
                 break;
             case 'softskills':
@@ -331,11 +456,28 @@ jQuery(document).ready(function($) {
                 setTimeout(function() {
                   term.pause();
                   term.clear();
-                  term.echo("");
+                  term.echo("[Session completed, the browserwindow can be safely closed]");
                 }, 2000);
                 break;
             
             
+            case 'version':
+                term.echo("2.0.0");
+                break;
+            
+            
+            case 'cat':
+                if (commands.length < 2) {
+                    term.echo("Usage: cat <filename>");
+                } else {
+                    var  postdir = commands[1];
+                    catPost(term, postdir);
+                }
+                break;
+            case 'posts':
+            case 'ls':
+                posts(term);
+                break;
             
             case '':
                 break;
@@ -346,10 +488,18 @@ jQuery(document).ready(function($) {
     }, {
 
          
-          greetings: "[[b;white;]]",
+          greetings: false,
+          onInit: function(term) {
+          term.pause();
+          term.typing('echo', 1, 'User request detected\nReserving Cloud Resources\n............................\nCloud Network ready\n........\nCloud Instance ready\n.......................\nInternet Breakout Ready, but Pong is preferred \n\nInititating CloudOS\nCloudOS Kernel Version 1.4.2: Sat February 29 23:21:41 CEST 2025; root:xnu-1699.22.73~1\/RELEASE_ARM_64\nLoglevel = quiet\n......\n............\n..................\n........................\n..............................\n....................................\n\nCopyright 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994\nThe Regents of the University of California. All rights reserved.\n\nCopyright 2024, 2025\nTerminalCV. MIT License (MIT)\n\n[CloudOSBoot1]: ready\n[CloudOSBoot2]: ready\n[Webserver]: ready \n[HUGO]: ready\n[TerminalCV]: ready\n\nBoot Complete, accepting user input.\n', function() {
+            term.clear();
+            term.echo("[[b;white;]‎\n                       ▄                           ▄▀▀  █     \n ▄▄▄    ▄▄▄   ▄ ▄▄   ▄▄█▄▄   ▄▄▄           ▄▄▄   ▄▄█▄▄  █   ▄ \n█   ▀  ▀   █  █▀  █    █    █▀  █         ▀   █    █    █ ▄▀  \n ▀▀▀▄  ▄▀▀▀█  █   █    █    █▀▀▀▀   ▀▀▀   ▄▀▀▀█    █    █▀█   \n▀▄▄▄▀  ▀▄▄▀█  █   █    ▀▄▄  ▀█▄▄▀         ▀▄▄▀█    █    █  ▀▄ \n\nWelcome to my online resume\n\nType \u0027help\u0027 for a list of available commands\n]");
+          });
+          term.resume();
+          },
         
 
-        prompt: '',
+        prompt: '[[;red;][][[;default;]user@terminalCV][[;red;]\\]][[;grey;]-][[;red;][][[;blue;]~\/terminalcv][[;red;]\\]][[;orange;]: ]',
 
         keydown: function(e, term) {
             if (animation) {
