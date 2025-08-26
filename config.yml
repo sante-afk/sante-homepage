@@ -1,5 +1,5 @@
 ## Example Config file
-baseURL: "https://sante-afk.github.io/sante-homepage/"
+baseURL: "https://example.com"
 theme: "terminalcv"
 title: "terminalcv"
 
