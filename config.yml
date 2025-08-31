@@ -210,7 +210,26 @@ params:
         company: Yaroslavl State Technical University 
         date: 2023
         badge: https://www.linkedin.com/in/mikhail-smirnov-00bb8b36a/
-        #description: Lorem Ipsum
+      
+      - certName: Introduction to Linux
+        company: Stepik 
+        date: 2024
+        badge: https://stepik.org/cert/2674734?lang=en
+
+      - certName: Immersion in JavaScript (for beginners)
+        company: Stepik 
+        date: 2025
+        badge: https://stepik.org/cert/2751453?lang=en
+
+      - certName: Introduction to Parallel Programming (OpenMP and MPI)
+        company: Stepik 
+        date: 2025
+        badge: https://stepik.org/cert/2889065?lang=en
+      
+      - certName: Digital transformation management. Project approach
+        company: Stepik 
+        date: 2025
+        badge: https://stepik.org/cert/2888090?lang=en
 
   # misc:
   #   # settings:
