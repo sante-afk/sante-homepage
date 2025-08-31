@@ -23,8 +23,8 @@ jQuery(document).ready(function($) {
         {{ if .Site.Params.misc }}
             {{ .Site.Params.misc.commandName | default "other" }}: "{{.Site.Params.misc.title }}",
         {{ end }}
-        {{ if not .Site.Params.Source }}
-            source: "shows details about template powering this website",
+        {{ if not .Site.Params.logo }}
+            logo: "shows logo",
         {{ end }}
         {{ if .Site.Params.version }}
             version: "Current version",
@@ -259,7 +259,7 @@ jQuery(document).ready(function($) {
          {{ end }}
     ];
 
-    var source = 
+    var logo = 
             " /\\_/\\ \n" +
             " >^,^<\n" +
             '[[;grey;]Maybe on Earth, maybe in the future]\n';
@@ -275,10 +275,11 @@ jQuery(document).ready(function($) {
         projects,
         certifications,
         misc,
+        logo,
         {{ if .Site.Params.misc }}
         {{ end }}
-        {{ if .Site.Params.source }}
-        source,
+        {{ if .Site.Params.logo }}
+        logo,
         {{ end }}
     ]
 
@@ -419,11 +420,11 @@ jQuery(document).ready(function($) {
             case ':(){:|:&};:':
                 term.echo("nice try");
                 break;
-            case 'source':
+            case 'logo':
                 {{ if .Site.Params.misc.settings.useLess }}
                 useLess = true;
                 {{ end }}
-                term.echo(source);
+                term.echo(logo);
                 break;
             case 'exit':
             {{ if .Site.Params.exitLocation }}
